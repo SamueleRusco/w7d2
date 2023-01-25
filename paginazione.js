@@ -36,31 +36,37 @@ const utenti = [
     eta: "2",
   },
 ];
-
+// faccio classe pagina con riferimenti items (array di persone) e pageSize (grandezza della pagina)
 class Pagina {
   constructor(items = [], pageSize = 3) {
     this.items = items;
     this.pageSize = pageSize;
   }
-
+  //imposto funzione
   renderizzaElementi(page, pageSize) {
-    const ul = document.querySelector("ul");
+    const ul = document.querySelector("ul"); //seleziono "padre" dove inserire tutto
     //pageSize = 3
     //pagina 1 0 -> 2 array.slice(0, 3)(pagina-1)*pageSize, pageSize
     //pagina 2 3 -> 5 array.slice(3, 6) (pagina-1)*pageSize, pageSize * pagina
     //pagina 3 6 -> 8 array.slice(6, 9 ) (pagina-1)*pageSize. pagesize *  pagina
-    let start = (page - 1) * this.pageSize;
-    let end = page * this.pageSize;
 
-    // document.querySelector("p span").innerHTML = page;
+    //logica ????????
+    let start = (page - 1) * this.pageSize; //pagina 0
+    let end = page * this.pageSize; //pagina 1, 2, 3 ecc ecc
+
+    document.querySelector("p span").innerHTML = page; //seleziono "padre" numero pagina
+
     if (start >= this.items.length) {
       start = 0;
       end = this.pageSize;
       document.querySelector("p span").innerHTML = "1";
+      //questo if serve per far si che se inseriamo un valore piu alto del dovuto torna in automatico a pagina 1
     }
-    ul.innerHTML = "";
+
+    ul.innerHTML = ""; //reset della lista
+
     for (const utente of this.items.slice(start, end)) {
-      ul.innerHTML += `<li>${utente.nome}</li>`;
+      ul.innerHTML += `<li>${utente.nome}</li>`; //figlio di ul che cambia a seconda dell'indice dell'array
     }
   }
 }
