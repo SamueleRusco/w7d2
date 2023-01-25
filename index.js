@@ -33,21 +33,17 @@ class Person {
   }
 }
 
-const p1 = new Person("Mario", "96");
-const p2 = new Person("Giovanni", "142");
-const p3 = new Person("Arturo", "58");
-const p4 = new Person("Alfredo", "33");
-const p5 = new Person("Mauro", "18");
-const p6 = new Person("Dario", "2");
-const p7 = new Person("Samuele", "2343");
-const p8 = new Person("Costantino", "34");
-const p9 = new Person("Giuseppe", "3434");
-const p10 = new Person("Luca", "23");
+p1 = new Person("Mario", "96");
+p2 = new Person("Giovanni", "142");
+p3 = new Person("Arturo", "58");
+p4 = new Person("Alfredo", "33");
+p5 = new Person("Mauro", "18");
+p6 = new Person("Dario", "2");
+p7 = new Person("Samuele", "2343");
+p8 = new Person("Costantino", "34");
+p9 = new Person("Giuseppe", "3434");
+p10 = new Person("Luca", "23");
+
 p8.whosOlder(p6);
 
-class ShowPeople {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-}
+// ESERCIZIO 2
